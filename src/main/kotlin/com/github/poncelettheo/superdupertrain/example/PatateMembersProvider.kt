@@ -23,12 +23,12 @@ class PatateMembersProvider : PyClassMembersProviderBase() {
 
         if (!isDjangoModel(pyClass, context)) return super.getMembers(clazz, location, context)
 
-        if (pyClass.qualifiedName == "blog.models.article.Article") {
-            pyClass.classAttributes.filter {isNullableDjangoField(it,context)}
-        }
 
+        return pyClass.classAttributes.filter{isNullableDjangoField(it,context)}.map{getCustomPatateMember(it)}
+    }
 
-        return listOf(PyCustomMember("patate"))
+    private fun getCustomPatateMember(expression: PyTargetExpression): PyCustomMember {
+        return PyCustomMember(expression.text + "_patate")
     }
 
     private fun isNullableDjangoField(expression: PyTargetExpression, context: TypeEvalContext): Boolean {
