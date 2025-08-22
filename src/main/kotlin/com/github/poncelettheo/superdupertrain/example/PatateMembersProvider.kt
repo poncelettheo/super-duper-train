@@ -28,7 +28,7 @@ class PatateMembersProvider : PyClassMembersProviderBase() {
     }
 
     private fun getCustomPatateMember(expression: PyTargetExpression): PyCustomMember {
-        return PyCustomMember(expression.text + "_patate")
+        return PyCustomMember(expression.text + "_patate", expression)
     }
 
     private fun isNullableDjangoField(expression: PyTargetExpression, context: TypeEvalContext): Boolean {
