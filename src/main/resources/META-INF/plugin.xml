@@ -10,8 +10,8 @@
     <depends>com.intellij.modules.python</depends>
 
     <extensions defaultExtensionNs="Pythonid">
-        <!-- Adds a synthetic member '.patate' to every class/instance -->
         <pyClassMembersProvider implementation="com.github.poncelettheo.superdupertrain.example.PatateMembersProvider"/>
+        <typeProvider implementation="com.github.poncelettheo.superdupertrain.example.PatateTypeProvider"/>
 
     </extensions>
 </idea-plugin>

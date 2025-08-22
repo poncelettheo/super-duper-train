@@ -6,12 +6,9 @@ import com.jetbrains.python.codeInsight.PyCustomMember
 import com.jetbrains.python.psi.PyBoolLiteralExpression
 import com.jetbrains.python.psi.PyCallExpression
 import com.jetbrains.python.psi.PyClass
-import com.jetbrains.python.psi.PyExpression
-import com.jetbrains.python.psi.PyKeywordArgument
 import com.jetbrains.python.psi.PyTargetExpression
 import com.jetbrains.python.psi.types.PyClassMembersProviderBase
 import com.jetbrains.python.psi.types.TypeEvalContext
-import kotlin.math.exp
 
 class PatateMembersProvider : PyClassMembersProviderBase() {
     override fun getMembers(
@@ -51,7 +48,6 @@ class PatateMembersProvider : PyClassMembersProviderBase() {
             || calleeClass.isSubclass("django.db.models.fields.Field", context))
 
     }
-
 
     private fun isDjangoModel(pyClass: PyClass, context: TypeEvalContext): Boolean {
         return pyClass.isSubclass("django.db.models.Model", context) || pyClass.isSubclass("django.db.models.base.Model", context)
