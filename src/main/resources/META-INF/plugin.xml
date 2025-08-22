@@ -7,9 +7,11 @@
     <depends>com.intellij.modules.platform</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
+    <depends>com.intellij.modules.python</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.poncelettheo.superdupertrain.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.poncelettheo.superdupertrain.startup.MyProjectActivity" />
+    <extensions defaultExtensionNs="Pythonid">
+        <!-- Adds a synthetic member '.patate' to every class/instance -->
+        <pyClassMembersProvider implementation="com.github.poncelettheo.superdupertrain.example.PatateMembersProvider"/>
+
     </extensions>
 </idea-plugin>
