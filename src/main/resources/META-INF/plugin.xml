@@ -11,7 +11,5 @@
 
     <extensions defaultExtensionNs="Pythonid">
         <pyClassMembersProvider implementation="com.github.poncelettheo.superdupertrain.example.PatateMembersProvider"/>
-        <typeProvider implementation="com.github.poncelettheo.superdupertrain.example.PatateTypeProvider"/>
-
     </extensions>
 </idea-plugin>
