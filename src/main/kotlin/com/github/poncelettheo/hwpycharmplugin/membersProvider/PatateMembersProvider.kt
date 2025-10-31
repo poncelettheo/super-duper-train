@@ -1,4 +1,4 @@
-package com.github.poncelettheo.superdupertrain.example
+package com.github.poncelettheo.hwpycharmplugin.membersProvider
 
 import com.intellij.psi.PsiElement
 import com.jetbrains.python.psi.types.PyClassType
