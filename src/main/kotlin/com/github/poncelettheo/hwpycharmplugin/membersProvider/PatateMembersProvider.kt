@@ -16,6 +16,12 @@ class PatateMembersProvider : PyClassMembersProviderBase() {
         location: PsiElement?,
         context: TypeEvalContext
     ): Collection<PyCustomMember> {
+        /**
+         * For each nullable field of a django model, adds a non-nullable version member of this field
+         * to the attributes of the model.
+         * Reference the non-nullable field through an attribute named <field_name>_patate.
+         * Point the non-nullable field to the original nullable field definition and type.
+         */
         val pyClass: PyClass = clazz?.pyClass ?: return super.getMembers(clazz, location, context)
 
         if (!isDjangoModel(pyClass, context)) return super.getMembers(clazz, location, context)
